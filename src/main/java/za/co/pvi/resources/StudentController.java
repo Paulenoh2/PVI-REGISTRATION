@@ -21,9 +21,9 @@ public class StudentController {
     @PostMapping("/students")
     public Student registerStudent(@RequestBody Student student) {
         System.out.println("Before: " + student);
-        if(student.getId() != null || student.getId() == 0){
-            throw new InvalidIdException("Can not create a new student with id.");
-        }
+//        if(student.getId() != null || student.getId() == 0){
+//            throw new InvalidIdException("Can not create a new student with id.");
+//        }
         final Student student1 = studentService.createStudent(student);
         System.out.println("Before: " + student1);
         return student1;
@@ -44,13 +44,13 @@ public class StudentController {
         return "Delete Successful.";
     }
     @DeleteMapping("/students/{id}")
-    public String deleteStudentById(@PathVariable Integer id) {
+    public String deleteStudentById(@PathVariable Long id) {
         studentService.deleteStudentById(id);
         return "Delete Successful.";
     }
 
     @GetMapping("/students/{id}")
-    public Optional<Student> getStudentById(@PathVariable Integer id) {
+    public Optional<Student> getStudentById(@PathVariable Long id) {
         final Optional<Student> byId = studentService.findById(id);
         return byId;
     }

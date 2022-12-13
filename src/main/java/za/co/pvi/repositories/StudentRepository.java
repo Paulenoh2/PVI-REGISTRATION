@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import za.co.pvi.entities.Student;
 
 @Repository
-public interface StudentRepository extends JpaRepository<Student, Integer> {
+public interface StudentRepository extends JpaRepository<Student, Long> {
 }

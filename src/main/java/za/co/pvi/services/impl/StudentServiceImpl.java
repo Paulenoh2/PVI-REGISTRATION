@@ -33,7 +33,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void deleteStudentById(Integer id) {
+    public void deleteStudentById(Long id) {
         studentRepository.deleteById(id);
     }
 
@@ -44,7 +44,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Optional<Student> findById(Integer id) {
+    public Optional<Student> findById(Long id) {
         final Optional<Student> studentById = studentRepository.findById(id);
         return studentById;
     }

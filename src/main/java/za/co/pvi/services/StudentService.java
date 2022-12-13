@@ -15,10 +15,10 @@ public interface StudentService {
 
     void deleteStudent(Student student);
 
-    void deleteStudentById(Integer id);
+    void deleteStudentById(Long id);
 
     List<Student> findAllStudents();
 
-    Optional<Student> findById(Integer id);
+    Optional<Student> findById(Long id);
 
 }
